@@ -47,11 +47,18 @@ namespace GIT_qlsv
 
 		}
 
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		
+
+		private void Form2_Load(object sender, EventArgs e)
 		{
-			comboBox1.DataSource = qlsinhvien;
-			comboBox1.DisplayMember = "khoa";
-			comboBox1.ValueMember = "Khoa";
+			var makhoas = from mk in qlsinhvien.Khoas
+						  select mk.MaKhoa;
+			cboKhoa.DataSource = makhoas;
+
+			var sinhviens = from sv in qlsinhvien.SinhViens
+							select sv;
+			
+			dataGridView1.DataSource = sinhviens;
 		}
 	}
 }

@@ -41,12 +41,16 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.cboKhoa = new System.Windows.Forms.ComboBox();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Tenlop = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.toolStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -164,14 +168,13 @@
 			this.textBox2.Size = new System.Drawing.Size(146, 20);
 			this.textBox2.TabIndex = 13;
 			// 
-			// comboBox1
+			// cboKhoa
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(225, 77);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 21);
-			this.comboBox1.TabIndex = 14;
-			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+			this.cboKhoa.FormattingEnabled = true;
+			this.cboKhoa.Location = new System.Drawing.Point(225, 77);
+			this.cboKhoa.Name = "cboKhoa";
+			this.cboKhoa.Size = new System.Drawing.Size(121, 21);
+			this.cboKhoa.TabIndex = 14;
 			// 
 			// dateTimePicker1
 			// 
@@ -210,11 +213,40 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSV,
+            this.Hoten,
+            this.Ngaysinh,
+            this.Tenlop});
+			this.dataGridView1.GridColor = System.Drawing.Color.Red;
+			this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.dataGridView1.Location = new System.Drawing.Point(12, 217);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView1.Size = new System.Drawing.Size(776, 221);
 			this.dataGridView1.TabIndex = 19;
+			// 
+			// MaSV
+			// 
+			this.MaSV.HeaderText = "Mã sinh viên";
+			this.MaSV.Name = "MaSV";
+			// 
+			// Hoten
+			// 
+			this.Hoten.HeaderText = "Tên sinh viên";
+			this.Hoten.Name = "Hoten";
+			// 
+			// Ngaysinh
+			// 
+			this.Ngaysinh.HeaderText = "Ngày sinh";
+			this.Ngaysinh.Name = "Ngaysinh";
+			// 
+			// Tenlop
+			// 
+			this.Tenlop.HeaderText = "Tên lớp ";
+			this.Tenlop.Name = "Tenlop";
 			// 
 			// Form2
 			// 
@@ -226,7 +258,7 @@
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.dateTimePicker1);
-			this.Controls.Add(this.comboBox1);
+			this.Controls.Add(this.cboKhoa);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
@@ -240,6 +272,7 @@
 			this.MinimizeBox = false;
 			this.Name = "Form2";
 			this.Text = "Form2";
+			this.Load += new System.EventHandler(this.Form2_Load);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -262,11 +295,15 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox cboKhoa;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Button btnTimKiem;
 		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Hoten;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Tenlop;
 	}
 }
