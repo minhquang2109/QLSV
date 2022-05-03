@@ -51,12 +51,24 @@ namespace GIT_qlsv
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-
+			string mamh = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			MonHoc mh = qlsv.MonHocs.Where(t=>t.MaMonHoc == mamh).FirstOrDefault();
+			qlsv.MonHocs.DeleteOnSubmit(mh);
+			qlsv.SubmitChanges();
+			var monhocs = from mh1 in qlsv.MonHocs
+						  select mh1;
+			dataGridView1.DataSource = monhocs;
 		}
 
 		private void btnXua_Click(object sender, EventArgs e)
 		{
-
+			string mamh = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			MonHoc mh = qlsv.MonHocs.Where(t => t.MaMonHoc == mamh).FirstOrDefault();
+			mh.TenMonHoc = txtTenMonHoc.Text;
+			qlsv.SubmitChanges();
+			var monhocs = from mh1 in qlsv.MonHocs
+						  select mh1;
+			dataGridView1.DataSource = monhocs;
 		}
 	}
 }
