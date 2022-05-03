@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
 			this.label1 = new System.Windows.Forms.Label();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -40,19 +41,17 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtMaSV = new System.Windows.Forms.TextBox();
 			this.cboKhoa = new System.Windows.Forms.ComboBox();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.txtMalop = new System.Windows.Forms.TextBox();
+			this.txtHoTen = new System.Windows.Forms.TextBox();
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Tenlop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.toolStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -161,12 +160,12 @@
 			this.label6.TabIndex = 11;
 			this.label6.Text = "Mã lớp";
 			// 
-			// textBox2
+			// txtMaSV
 			// 
-			this.textBox2.Location = new System.Drawing.Point(225, 128);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(146, 20);
-			this.textBox2.TabIndex = 13;
+			this.txtMaSV.Location = new System.Drawing.Point(225, 128);
+			this.txtMaSV.Name = "txtMaSV";
+			this.txtMaSV.Size = new System.Drawing.Size(146, 20);
+			this.txtMaSV.TabIndex = 13;
 			// 
 			// cboKhoa
 			// 
@@ -176,27 +175,19 @@
 			this.cboKhoa.Size = new System.Drawing.Size(121, 21);
 			this.cboKhoa.TabIndex = 14;
 			// 
-			// dateTimePicker1
+			// txtMalop
 			// 
-			this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.On;
-			this.dateTimePicker1.Location = new System.Drawing.Point(225, 175);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(197, 20);
-			this.dateTimePicker1.TabIndex = 15;
+			this.txtMalop.Location = new System.Drawing.Point(517, 79);
+			this.txtMalop.Name = "txtMalop";
+			this.txtMalop.Size = new System.Drawing.Size(146, 20);
+			this.txtMalop.TabIndex = 16;
 			// 
-			// textBox1
+			// txtHoTen
 			// 
-			this.textBox1.Location = new System.Drawing.Point(517, 79);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(146, 20);
-			this.textBox1.TabIndex = 16;
-			// 
-			// textBox3
-			// 
-			this.textBox3.Location = new System.Drawing.Point(517, 128);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(146, 20);
-			this.textBox3.TabIndex = 17;
+			this.txtHoTen.Location = new System.Drawing.Point(517, 128);
+			this.txtHoTen.Name = "txtHoTen";
+			this.txtHoTen.Size = new System.Drawing.Size(146, 20);
+			this.txtHoTen.TabIndex = 17;
 			// 
 			// btnTimKiem
 			// 
@@ -215,11 +206,6 @@
 			// 
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaSV,
-            this.Hoten,
-            this.Ngaysinh,
-            this.Tenlop});
 			this.dataGridView1.GridColor = System.Drawing.Color.Red;
 			this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.dataGridView1.Location = new System.Drawing.Point(12, 217);
@@ -228,38 +214,28 @@
 			this.dataGridView1.Size = new System.Drawing.Size(776, 221);
 			this.dataGridView1.TabIndex = 19;
 			// 
-			// MaSV
+			// DateTimePicker1
 			// 
-			this.MaSV.HeaderText = "Mã sinh viên";
-			this.MaSV.Name = "MaSV";
-			// 
-			// Hoten
-			// 
-			this.Hoten.HeaderText = "Tên sinh viên";
-			this.Hoten.Name = "Hoten";
-			// 
-			// Ngaysinh
-			// 
-			this.Ngaysinh.HeaderText = "Ngày sinh";
-			this.Ngaysinh.Name = "Ngaysinh";
-			// 
-			// Tenlop
-			// 
-			this.Tenlop.HeaderText = "Tên lớp ";
-			this.Tenlop.Name = "Tenlop";
+			this.DateTimePicker1.CustomFormat = "dd/MM/yyyy";
+			this.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.DateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+			this.DateTimePicker1.Location = new System.Drawing.Point(225, 175);
+			this.DateTimePicker1.Name = "DateTimePicker1";
+			this.DateTimePicker1.Size = new System.Drawing.Size(200, 20);
+			this.DateTimePicker1.TabIndex = 20;
 			// 
 			// Form2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.DateTimePicker1);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.btnTimKiem);
-			this.Controls.Add(this.textBox3);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.dateTimePicker1);
+			this.Controls.Add(this.txtHoTen);
+			this.Controls.Add(this.txtMalop);
 			this.Controls.Add(this.cboKhoa);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.txtMaSV);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
@@ -276,6 +252,7 @@
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -294,16 +271,13 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtMaSV;
 		private System.Windows.Forms.ComboBox cboKhoa;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox txtMalop;
+		private System.Windows.Forms.TextBox txtHoTen;
 		private System.Windows.Forms.Button btnTimKiem;
 		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Hoten;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Tenlop;
+		private System.Windows.Forms.DateTimePicker DateTimePicker1;
+		private System.Windows.Forms.BindingSource bindingSource1;
 	}
 }

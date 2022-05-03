@@ -28,21 +28,21 @@ namespace GIT_qlsv
 		}
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			var monhocs = from mh in qlsv.MonHocs
+			var Sinhviens = from mh in qlsv.SinhViens
 							select mh;
-			dataGridView1.DataSource = monhocs;
+			dataGridView1.DataSource = Sinhviens;
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			MonHoc mh = new MonHoc();
-			mh.MaMonHoc = txtMaMonHoc.Text;
-			mh.TenMonHoc = txtTenMonHoc.Text;
-			qlsv.MonHocs.InsertOnSubmit(mh);
+			SinhVien mh = new SinhVien();
+			mh.MaSinhVien = txtMaMonHoc.Text;
+			mh.HoTen = txtTenMonHoc.Text;
+			qlsv.SinhViens.InsertOnSubmit(mh);
 			qlsv.SubmitChanges();
-			var monhocs = from mh1 in qlsv.MonHocs
+			var sinhviens = from mh1 in qlsv.SinhViens
 						  select mh1;
-			dataGridView1.DataSource = monhocs;
+			dataGridView1.DataSource = sinhviens;
 
 		}
 

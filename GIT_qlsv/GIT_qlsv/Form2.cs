@@ -19,9 +19,23 @@ namespace GIT_qlsv
 
 		QLSVDataContext qlsinhvien = new QLSVDataContext();
 
+
+
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+			SinhVien sv = new SinhVien();
+			
+			sv.MaSinhVien = txtMaSV.Text;
+			sv.HoTen = txtHoTen.Text;
+			qlsinhvien.SinhViens.InsertOnSubmit(sv);
+			qlsinhvien.SubmitChanges();
 
+			var sinhviens = from sv1 in qlsinhvien.SinhViens
+							join l in qlsinhvien.Lops
+							on sv1.MaLop equals l.MaLop
+							select new { sv1.MaSinhVien, sv.HoTen, sv1.NgaySinh, l.TenLop };
+
+			dataGridView1.DataSource = sinhviens;
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
@@ -37,17 +51,14 @@ namespace GIT_qlsv
 		private void btnDong_Click(object sender, EventArgs e)
 		{
 			DialogResult h = MessageBox.Show
-				("Bạn có chắc muốn thoát không?", "Error", MessageBoxButtons.OKCancel);
+				("Bạn có chắc muốn thoát không?", "Thoát !", MessageBoxButtons.OKCancel);
 			if (h == DialogResult.OK)
 				Application.Exit();
 		}
 
-		private void txtMaMonHoc_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
 		
+
+
 
 		private void Form2_Load(object sender, EventArgs e)
 		{
@@ -56,7 +67,9 @@ namespace GIT_qlsv
 			cboKhoa.DataSource = makhoas;
 
 			var sinhviens = from sv in qlsinhvien.SinhViens
-							select sv;
+							join l in qlsinhvien.Lops
+							on sv.MaLop equals l.MaLop
+							select new { sv.MaSinhVien, sv.HoTen, sv.NgaySinh, l.TenLop };
 			
 			dataGridView1.DataSource = sinhviens;
 		}
