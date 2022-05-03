@@ -72,6 +72,7 @@
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.Size = new System.Drawing.Size(47, 22);
 			this.btnXoa.Text = "Xóa";
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// btnXua
 			// 
@@ -80,6 +81,7 @@
 			this.btnXua.Name = "btnXua";
 			this.btnXua.Size = new System.Drawing.Size(46, 22);
 			this.btnXua.Text = "Sửa";
+			this.btnXua.Click += new System.EventHandler(this.btnXua_Click);
 			// 
 			// btnThem
 			// 
@@ -115,6 +117,9 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(12, 164);
 			this.dataGridView1.Name = "dataGridView1";
